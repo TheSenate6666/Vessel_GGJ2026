@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "InputSystem_Actions",
     "maps": [
         {
@@ -54,7 +55,7 @@
                     "name": "Jump",
                     "type": "Button",
                     "id": "f1ba0d36-48eb-4cd5-b651-1c94a6531f70",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -986,6 +987,34 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "PlayerMovement",
+            "id": "e583f322-7551-4a23-bf32-2926d178ac16",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "5d48ef71-356d-4cfb-8ce5-e287edf52b8c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9081353d-ae49-40b0-9402-2841285bb68a",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
