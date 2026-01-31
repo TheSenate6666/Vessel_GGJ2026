@@ -54,6 +54,7 @@ public class MeleeBaseState : State
             Attack();
         }
 
+
         if (animator.GetFloat("AttackWindow.Open") > 0f && AttackPressedTimer > 0)
         {
             shouldCombo = true;
@@ -66,27 +67,42 @@ public class MeleeBaseState : State
     }
 
     protected void Attack()
+{
+    Collider2D[] collidersToDamage = new Collider2D[10];
+    ContactFilter2D filter = new ContactFilter2D();
+    filter.useTriggers = true;
+
+    // hitCollider should be defined in your class scope
+    int colliderCount = Physics2D.OverlapCollider(hitCollider, filter, collidersToDamage);
+
+    for (int i = 0; i < colliderCount; i++)
     {
-        Collider2D[] collidersToDamage = new Collider2D[10];
-        ContactFilter2D filter = new ContactFilter2D();
-        filter.useTriggers = true;
-        int colliderCount = Physics2D.OverlapCollider(hitCollider, filter, collidersToDamage);
-        for (int i = 0; i < colliderCount; i++)
+        if (!collidersDamaged.Contains(collidersToDamage[i]))
         {
+            TeamComponent hitTeamComponent = collidersToDamage[i].GetComponentInChildren<TeamComponent>();
 
-            if (!collidersDamaged.Contains(collidersToDamage[i]))
+            // 1. Verify Team and Component
+            if (hitTeamComponent != null && hitTeamComponent.teamIndex == TeamIndex.Enemy)
             {
-                TeamComponent hitTeamComponent = collidersToDamage[i].GetComponentInChildren<TeamComponent>();
+                // 2. Instantiate VFX
+                GameObject.Instantiate(HitEffectPrefab, collidersToDamage[i].transform.position, Quaternion.identity);
+                
+                // 3. Get the Health Script safely
+                EnemyHealth enemyHealth = hitTeamComponent.GetComponent<EnemyHealth>();
 
-                // Only check colliders with a valid Team Componnent attached
-                if (hitTeamComponent && hitTeamComponent.teamIndex == TeamIndex.Enemy)
+                if (enemyHealth != null)
                 {
-                    GameObject.Instantiate(HitEffectPrefab, collidersToDamage[i].transform);
-                    Debug.Log("Enemy Has Taken:" + attackIndex + "Damage");
-                    collidersDamaged.Add(collidersToDamage[i]);
+                    int dmgMult = 1;
+                    // Note: Use the variable 'enemyHealth', not the Class name 'EnemyHealth'
+                    enemyHealth.Takedamage(attackIndex, dmgMult);
+                    
+                    Debug.Log($"Enemy hit! Damage: {attackIndex * dmgMult}");
                 }
+
+                collidersDamaged.Add(collidersToDamage[i]);
             }
         }
     }
+}
 
 }

@@ -24,7 +24,7 @@ public class GroundEntryState : MeleeBaseState
             if (shouldCombo)
             {
                 stateMachine.SetNextState(new GroundComboState());
-                Debug.Log("switch to groundcombo");
+                
             }
             else
             {

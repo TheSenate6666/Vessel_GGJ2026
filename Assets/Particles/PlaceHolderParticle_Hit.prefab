@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 2756273242428622970}
   - component: {fileID: 1817976692497800667}
   - component: {fileID: 5899042119865439572}
+  - component: {fileID: 7380726174952053003}
   m_Layer: 0
-  m_Name: PlaceHolderParticle
+  m_Name: PlaceHolderParticle_Hit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4833,3 +4834,15 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &7380726174952053003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7813026150428591705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96b54aac3358a0c4bb78e1c2394ae14a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
