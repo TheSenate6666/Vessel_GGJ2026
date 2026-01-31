@@ -10,7 +10,7 @@ public class MeleeEnemy : MonoBehaviour
 	public int enragedAttackDamage = 40;
 
 	public Vector3 attackOffset;
-	public float attackRange = 1f;
+	public float attackRange = 0.5f;
 	public LayerMask attackMask;
 
 	public void LookAtPlayer()
@@ -44,8 +44,9 @@ public class MeleeEnemy : MonoBehaviour
 		if (colInfo != null)
 		{
 			colInfo.GetComponent<Health>().Takedamage(1,1);
-		}
-	}
+            
+	    }
+    }
 
 	public void EnragedAttack()
 	{
