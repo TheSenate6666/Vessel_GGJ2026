@@ -1,27 +1,51 @@
 
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
+using System.Collections.Generic;
 
 
 public class PlayerController : MonoBehaviour
 {
     [Header("Player References")]
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] Animator anim;
+    public static PlayerController instance;
 
-    [Header("Player Settings")]
+    
+
+    [Header("Player Movement Settings")]
     [SerializeField] float speed;
     [SerializeField] float jumpingForce;
     [SerializeField] float fallGravityMultiplier;
     [SerializeField] float lowJumpMultiplier;
     [SerializeField] float xvelocityjumpdivision;
+    private float horizontol;
 
 
-    [Header("Player Settings")]
+    [Header("Player GroundSettings")]
     [SerializeField] LayerMask groundLayers;
     [SerializeField] Transform groundCheck;
 
+    [Header("Combat Settings")]
+     private StateMachine meleeStateMachine;
+    [SerializeField] public Collider2D hitbox;
+    [SerializeField] public GameObject Hiteffect;
 
-    private float horizontol;
+
+
+    private void Awake()
+    {
+        instance= this;
+    }
+
+    public void Start()
+    {
+        meleeStateMachine = GetComponent<StateMachine>();
+    }
+
+
 
     public void Move(InputAction.CallbackContext context)
     {
@@ -33,7 +57,7 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = new Vector2(horizontol * speed, rb.linearVelocity.y);
 
         if (rb.linearVelocity.y < 0&& !IsGrounded())
-        //rb.linearVelocityX =  new Vector(horizontol * speed/xvelocityjumpdivision);
+        //srb.linearVelocityX =  new Vector(horizontol * speed/xvelocityjumpdivision);
 
     if (rb.linearVelocity.y < 0)
     {
@@ -54,9 +78,36 @@ public class PlayerController : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
+        Debug.Log("Jumped ");
         if (context.performed && IsGrounded())
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingForce);
+        }
+    }
+
+    public void Attack(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            
+            // Safety check: is the state machine missing?
+            if (meleeStateMachine == null)
+            {
+                Debug.LogError("StateMachine component missing from " + gameObject.name);
+                return;
+            }
+
+            // Use ?. to safely check the type. If CurrentState is null, the check just returns false.
+            if (meleeStateMachine.CurrentState?.GetType() == typeof(IdleCombatState))
+            {
+                meleeStateMachine.SetNextState(new GroundEntryState());
+                
+            }
+            else if (meleeStateMachine.CurrentState is MeleeBaseState activeMeleeState)
+            {
+                activeMeleeState.AttackPressedTimer = 2;
+                
+            }
         }
     }
 
