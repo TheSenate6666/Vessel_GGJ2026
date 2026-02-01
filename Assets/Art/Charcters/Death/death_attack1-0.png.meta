@@ -1,25 +1,31 @@
 fileFormatVersion: 2
-guid: 8501d62b7dce2f3499c9ca27f1876bba
+guid: e0f5bd391fdc1ca4fb77cfe4b718c9ac
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5653094220598222548
-    second: moon_attack01_0
+      213: 257376458675944564
+    second: death_attack1-0_0
   - first:
-      213: -3918875691696816073
-    second: moon_attack01_1
+      213: -4620060126990902188
+    second: death_attack1-0_1
   - first:
-      213: 9050308436619277086
-    second: moon_attack01_2
+      213: -8273438571771141814
+    second: death_attack1-0_2
   - first:
-      213: -8315560303635215865
-    second: moon_attack01_3
+      213: -4980877418315761503
+    second: death_attack1-0_3
   - first:
-      213: -7945376263845475979
-    second: moon_attack01_4
+      213: -4798202264115457780
+    second: death_attack1-0_4
   - first:
-      213: -3331948729968081077
-    second: moon_attack01_5
+      213: -5796401403062547442
+    second: death_attack1-0_5
+  - first:
+      213: -5486255770272946299
+    second: death_attack1-0_6
+  - first:
+      213: -1594889465939056228
+    second: death_attack1-0_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,13 +134,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: moon_attack01_0
+      name: death_attack1-0_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 216
-        height: 216
+        width: 1200
+        height: 483
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +149,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4de12940e33d37e40800000000000000
-      internalID: 5653094220598222548
+      spriteID: 47c7de88682629300800000000000000
+      internalID: 257376458675944564
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_attack01_1
+      name: death_attack1-0_1
       rect:
         serializedVersion: 2
-        x: 216
+        x: 1200
         y: 0
-        width: 216
-        height: 216
+        width: 1200
+        height: 483
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7308f7d425b5d99c0800000000000000
-      internalID: -3918875691696816073
+      spriteID: 45cd2c9eacf32efb0800000000000000
+      internalID: -4620060126990902188
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_attack01_2
+      name: death_attack1-0_2
       rect:
         serializedVersion: 2
-        x: 432
+        x: 2400
         y: 0
-        width: 216
-        height: 216
+        width: 1200
+        height: 483
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +193,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e13b9609297299d70800000000000000
-      internalID: 9050308436619277086
+      spriteID: a41e09a1477de2d80800000000000000
+      internalID: -8273438571771141814
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_attack01_3
+      name: death_attack1-0_3
       rect:
         serializedVersion: 2
-        x: 648
+        x: 3600
         y: 0
-        width: 216
-        height: 216
+        width: 1200
+        height: 483
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 70acb7926f1399c80800000000000000
-      internalID: -8315560303635215865
+      spriteID: 1a8368bb06e50eab0800000000000000
+      internalID: -4980877418315761503
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_attack01_4
+      name: death_attack1-0_4
       rect:
         serializedVersion: 2
-        x: 864
+        x: 4800
         y: 0
-        width: 216
-        height: 216
+        width: 1200
+        height: 483
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,20 +237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5798baa626a5cb190800000000000000
-      internalID: -7945376263845475979
+      spriteID: c015ce6767c596db0800000000000000
+      internalID: -4798202264115457780
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moon_attack01_5
+      name: death_attack1-0_5
       rect:
         serializedVersion: 2
-        x: 1080
+        x: 6000
         y: 0
-        width: 216
-        height: 216
+        width: 1200
+        height: 483
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,8 +259,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b474074984a82c1d0800000000000000
-      internalID: -3331948729968081077
+      spriteID: e0c81e272ab0f8fa0800000000000000
+      internalID: -5796401403062547442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: death_attack1-0_6
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 0
+        width: 1200
+        height: 483
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 587a1f1c177ecd3b0800000000000000
+      internalID: -5486255770272946299
       vertices: []
       indices: 
       edges: []
@@ -263,7 +291,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 0adc70c7dc86de04bb45b482cb6a41d9
+    spriteID: 19a50484cb1882340ad8f399d2526ea6
     internalID: 0
     vertices: []
     indices: 
@@ -273,12 +301,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      moon_attack01_0: 5653094220598222548
-      moon_attack01_1: -3918875691696816073
-      moon_attack01_2: 9050308436619277086
-      moon_attack01_3: -8315560303635215865
-      moon_attack01_4: -7945376263845475979
-      moon_attack01_5: -3331948729968081077
+      death_attack1-0_0: 257376458675944564
+      death_attack1-0_1: -4620060126990902188
+      death_attack1-0_2: -8273438571771141814
+      death_attack1-0_3: -4980877418315761503
+      death_attack1-0_4: -4798202264115457780
+      death_attack1-0_5: -5796401403062547442
+      death_attack1-0_6: -5486255770272946299
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

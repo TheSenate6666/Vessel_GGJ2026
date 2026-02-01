@@ -128,10 +128,10 @@ TextureImporter:
       name: moon_attack01_projectile_0
       rect:
         serializedVersion: 2
-        x: 122
-        y: 86
-        width: 113
-        height: 17
+        x: 0
+        y: 0
+        width: 1983
+        height: 216
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,10 +150,10 @@ TextureImporter:
       name: moon_attack01_projectile_1
       rect:
         serializedVersion: 2
-        x: 1727
-        y: 86
-        width: 113
-        height: 17
+        x: 1983
+        y: 0
+        width: 1983
+        height: 216
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,10 +172,10 @@ TextureImporter:
       name: moon_attack01_projectile_2
       rect:
         serializedVersion: 2
-        x: 3371
-        y: 86
-        width: 113
-        height: 17
+        x: 3966
+        y: 0
+        width: 1983
+        height: 216
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,10 +194,10 @@ TextureImporter:
       name: moon_attack01_projectile_3
       rect:
         serializedVersion: 2
-        x: 5024
-        y: 86
-        width: 113
-        height: 17
+        x: 5949
+        y: 0
+        width: 1983
+        height: 216
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,33 +212,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: moon_attack01_projectile_4
-      rect:
-        serializedVersion: 2
-        x: 6863
-        y: 86
-        width: 113
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 324f83ae16ce22300800000000000000
-      internalID: 226002836607530019
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: facfe500c7033ee4ca77054ed82ed33d
     internalID: 0
     vertices: []
     indices: 
@@ -252,7 +230,6 @@ TextureImporter:
       moon_attack01_projectile_1: -154079134958011261
       moon_attack01_projectile_2: -9001712716627957026
       moon_attack01_projectile_3: 4787522495089921948
-      moon_attack01_projectile_4: 226002836607530019
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
