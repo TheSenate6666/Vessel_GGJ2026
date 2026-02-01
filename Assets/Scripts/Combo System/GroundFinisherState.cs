@@ -10,7 +10,7 @@ public class GroundFinisherState : MeleeBaseState
 
         //Attack
         attackIndex = 3;
-        duration = 0.5f;
+        duration = 0.4f;
         animator.SetTrigger("Attack" + attackIndex);
         Debug.Log("Player Attack " + attackIndex + " Fired!");
     }
@@ -19,7 +19,8 @@ public class GroundFinisherState : MeleeBaseState
     {
         base.OnUpdate();
 
-        if (fixedtime >= duration)
+        // Simply wait for the animation to finish completely
+        if (IsAnimationFinished())
         {
              stateMachine.SetNextStateToMain();
         }

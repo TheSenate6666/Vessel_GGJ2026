@@ -10,7 +10,7 @@ public class GroundComboState : MeleeBaseState
 
         //Attack
         attackIndex = 2;
-        duration = 0.5f;
+        duration = 0.4f;
         animator.SetTrigger("Attack" + attackIndex);
         Debug.Log("Player Attack " + attackIndex + " Fired!");
     }
@@ -19,17 +19,13 @@ public class GroundComboState : MeleeBaseState
     {
         base.OnUpdate();
 
-        if (fixedtime >= duration)
+        if (shouldCombo && fixedtime >= duration)
         {
-            if (shouldCombo)
-            {
-                stateMachine.SetNextState(new GroundFinisherState());
-                Debug.Log("switch to groundfinish");
-            }
-            else
-            {
-                stateMachine.SetNextStateToMain();
-            }
+            stateMachine.SetNextState(new GroundFinisherState());
+        }
+        else if (IsAnimationFinished())
+        {
+            stateMachine.SetNextStateToMain();
         }
     }
 }

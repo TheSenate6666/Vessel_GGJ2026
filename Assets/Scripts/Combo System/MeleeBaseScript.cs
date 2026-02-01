@@ -5,22 +5,15 @@ using UnityEngine.InputSystem;
 
 public class MeleeBaseState : State
 {
-    // How long this state should be active for before moving on
+    // How long minimum the attack must play before it CAN combo
     public float duration;
-    // Cached animator component
+    
     protected Animator animator;
-    // bool to check whether or not the next attack in the sequence should be played or not
     protected bool shouldCombo;
-    // The attack index in the sequence of attacks
     protected int attackIndex;
 
-
-
-    // The cached hit collider component of this attack
     protected Collider2D hitCollider;
-    // Cached already struck objects of said attack to avoid overlapping attacks on same target
     private List<Collider2D> collidersDamaged;
-    // The Hit Effect to Spawn on the afflicted Enemy
     private GameObject HitEffectPrefab;
 
     // Input buffer Timer
@@ -31,78 +24,80 @@ public class MeleeBaseState : State
         base.OnEnter(_stateMachine);
         animator = GetComponent<Animator>();
         collidersDamaged = new List<Collider2D>();
-        hitCollider = GetComponent<PlayerController>().hitbox;
-        HitEffectPrefab = GetComponent<PlayerController>().Hiteffect;
+        
+        // Ensure references are valid to prevent errors
+        var playerController = GetComponent<PlayerController>();
+        if(playerController != null) {
+            hitCollider = playerController.hitbox;
+            HitEffectPrefab = playerController.Hiteffect;
+        }
+        
+        // Reset combo flag on entry
+        shouldCombo = false; 
     }
 
     public override void OnUpdate()
     {
         base.OnUpdate();
-        fixedtime += Time.deltaTime;
+        // Assuming fixedtime is defined in base State and reset to 0 on OnEnter
+        fixedtime += Time.deltaTime; 
         AttackPressedTimer -= Time.deltaTime;
         
+        // CHECK 1: Register the Combo Input
         float window = animator.GetFloat("AttackWindow.Open");
-    
+        
+        // We check if the window is open AND we have a buffered input
         if (window > 0f && AttackPressedTimer > 0)
         {
             shouldCombo = true;
             Debug.Log("Combo Window Success! shouldCombo is now true.");
+            // Optional: Consume the timer so it doesn't trigger twice
+            AttackPressedTimer = 0; 
         }
 
+        // CHECK 2: Perform the Hit Detection
         if (animator.GetFloat("Weapon.Active") > 0f)
         {
             Attack();
         }
-
-
-        if (animator.GetFloat("AttackWindow.Open") > 0f && AttackPressedTimer > 0)
-        {
-            shouldCombo = true;
-        }
     }
 
-    public override void OnExit()
+    // Helper to check if the Animation is completely finished (NormalizedTime > 1)
+    protected bool IsAnimationFinished()
     {
-        base.OnExit();
+        return animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f;
     }
 
     protected void Attack()
-{
-    Collider2D[] collidersToDamage = new Collider2D[10];
-    ContactFilter2D filter = new ContactFilter2D();
-    filter.useTriggers = true;
-
-    // hitCollider should be defined in your class scope
-    int colliderCount = Physics2D.OverlapCollider(hitCollider, filter, collidersToDamage);
-
-    for (int i = 0; i < colliderCount; i++)
     {
-        if (!collidersDamaged.Contains(collidersToDamage[i]))
+        // ... (Your existing Attack logic remains unchanged) ...
+        Collider2D[] collidersToDamage = new Collider2D[10];
+        ContactFilter2D filter = new ContactFilter2D();
+        filter.useTriggers = true;
+
+        if (hitCollider == null) return; // Safety Check
+
+        int colliderCount = Physics2D.OverlapCollider(hitCollider, filter, collidersToDamage);
+
+        for (int i = 0; i < colliderCount; i++)
         {
-            TeamComponent hitTeamComponent = collidersToDamage[i].GetComponentInChildren<TeamComponent>();
-
-            // 1. Verify Team and Component
-            if (hitTeamComponent != null && hitTeamComponent.teamIndex == TeamIndex.Enemy)
+            if (!collidersDamaged.Contains(collidersToDamage[i]))
             {
-                // 2. Instantiate VFX
-                GameObject.Instantiate(HitEffectPrefab, collidersToDamage[i].transform.position, Quaternion.identity);
-                
-                // 3. Get the Health Script safely
-                EnemyHealth enemyHealth = hitTeamComponent.GetComponent<EnemyHealth>();
+                TeamComponent hitTeamComponent = collidersToDamage[i].GetComponentInChildren<TeamComponent>();
 
-                if (enemyHealth != null)
+                if (hitTeamComponent != null && hitTeamComponent.teamIndex == TeamIndex.Enemy)
                 {
-                    int dmgMult = 1;
-                    // Note: Use the variable 'enemyHealth', not the Class name 'EnemyHealth'
-                    enemyHealth.Takedamage(attackIndex, dmgMult);
-                    
-                    Debug.Log($"Enemy hit! Damage: {attackIndex * dmgMult}");
-                }
+                    GameObject.Instantiate(HitEffectPrefab, collidersToDamage[i].transform.position, Quaternion.identity);
+                    EnemyHealth enemyHealth = hitTeamComponent.GetComponent<EnemyHealth>();
 
-                collidersDamaged.Add(collidersToDamage[i]);
+                    if (enemyHealth != null)
+                    {
+                        enemyHealth.Takedamage(attackIndex, 1);
+                        Debug.Log($"Enemy hit! Damage: {attackIndex}");
+                    }
+                    collidersDamaged.Add(collidersToDamage[i]);
+                }
             }
         }
     }
-}
-
 }

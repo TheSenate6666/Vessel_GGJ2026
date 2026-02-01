@@ -276,8 +276,8 @@ TextureImporter:
         y: 0
         width: 1014
         height: 735
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.09861933, y: 0.12244898}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -294,12 +294,12 @@ TextureImporter:
       name: Fire_Attack_3_1
       rect:
         serializedVersion: 2
-        x: 1014
+        x: 1000
         y: 0
         width: 1014
         height: 735
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.09861933, y: 0.12244898}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -320,8 +320,8 @@ TextureImporter:
         y: 0
         width: 1014
         height: 735
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.09861933, y: 0.12244898}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -342,8 +342,8 @@ TextureImporter:
         y: 0
         width: 1014
         height: 735
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.09861933, y: 0.12244898}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -364,8 +364,8 @@ TextureImporter:
         y: 0
         width: 1014
         height: 735
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.09861933, y: 0.12244898}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -386,8 +386,8 @@ TextureImporter:
         y: 0
         width: 1014
         height: 735
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.09861933, y: 0.12244898}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -404,12 +404,12 @@ TextureImporter:
       name: Fire_Attack_3_6
       rect:
         serializedVersion: 2
-        x: 6084
+        x: 6079
         y: 0
         width: 1014
         height: 735
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.09861933, y: 0.12244898}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -430,8 +430,8 @@ TextureImporter:
         y: 0
         width: 1014
         height: 735
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.09861933, y: 0.12244898}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -448,12 +448,12 @@ TextureImporter:
       name: Fire_Attack_3_8
       rect:
         serializedVersion: 2
-        x: 8112
+        x: 8109
         y: 0
         width: 1014
         height: 735
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.09861933, y: 0.12244898}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -474,8 +474,8 @@ TextureImporter:
         y: 0
         width: 1014
         height: 735
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.09861933, y: 0.12244898}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -492,12 +492,12 @@ TextureImporter:
       name: Fire_Attack_3_10
       rect:
         serializedVersion: 2
-        x: 10140
+        x: 10132
         y: 0
         width: 1014
         height: 735
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.09861933, y: 0.12244898}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -518,8 +518,8 @@ TextureImporter:
         y: 0
         width: 1014
         height: 735
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.09861933, y: 0.12244898}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

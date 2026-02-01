@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Animator anim;
     public static PlayerController instance;
 
-    
+    public Transform playerLookTransform;
 
     [Header("Player Movement Settings")]
     [SerializeField] float speed;
@@ -45,7 +45,24 @@ public class PlayerController : MonoBehaviour
         meleeStateMachine = GetComponent<StateMachine>();
     }
 
+    public void Update()
+    {
+        UpdateAnimations();
+        FlipSprite();
+    }
 
+
+    private void UpdateAnimations()
+    {
+        // 1. Pass the absolute horizontal movement (0 to 1) for Idle/Run transition
+        anim.SetFloat("horizontalSpeed", Mathf.Abs(horizontol));
+
+        // 2. Pass the grounded status
+        anim.SetBool("isGrounded", IsGrounded());
+
+        // 3. Pass vertical velocity to distinguish between jumping and falling
+        anim.SetFloat("verticalVelocity", rb.linearVelocity.y);
+    }
 
     public void Move(InputAction.CallbackContext context)
     {
@@ -111,4 +128,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void FlipSprite()
+    {
+        // Safety check: ensure you've assigned the child in the inspector
+        if (playerLookTransform == null) return;
+
+        // Flips ONLY the visual child object based on movement direction
+        if (horizontol > 0)
+        {
+            playerLookTransform.localScale = new Vector3(1, 1, 1);
+        }
+        else if (horizontol < 0)
+        {
+            playerLookTransform.localScale = new Vector3(-1, 1, 1);
+        }
+
+    }
 }

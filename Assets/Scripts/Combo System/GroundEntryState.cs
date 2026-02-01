@@ -10,7 +10,7 @@ public class GroundEntryState : MeleeBaseState
 
         //Attack
         attackIndex = 1;
-        duration = 0.5f;
+        duration = 0.4f;
         animator.SetTrigger("Attack" + attackIndex);
         Debug.Log("Player Attack " + attackIndex + " Fired!");
     }
@@ -19,17 +19,18 @@ public class GroundEntryState : MeleeBaseState
     {
         base.OnUpdate();
 
-        if (fixedtime >= duration)
+        // 1. Check for Combo Transition
+        // We can transition as soon as duration is passed OR animation is near end
+        if (shouldCombo && fixedtime >= duration)
         {
-            if (shouldCombo)
-            {
-                stateMachine.SetNextState(new GroundComboState());
-                
-            }
-            else
-            {
-                stateMachine.SetNextStateToMain();
-            }
+            stateMachine.SetNextState(new GroundComboState());
+        }
+        // 2. Check for Return to Idle
+        // ONLY return to idle if the animation has actually finished playing.
+        // This prevents the state from cutting off early if duration is too short.
+        else if (IsAnimationFinished())
+        {
+            stateMachine.SetNextStateToMain();
         }
     }
 }
