@@ -119,10 +119,10 @@ TextureImporter:
       name: moon_jump_0
       rect:
         serializedVersion: 2
-        x: 17
+        x: 0
         y: 0
-        width: 125
-        height: 163
+        width: 216
+        height: 216
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,10 +141,10 @@ TextureImporter:
       name: moon_jump_1
       rect:
         serializedVersion: 2
-        x: 236
+        x: 216
         y: 0
-        width: 125
-        height: 172
+        width: 216
+        height: 216
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: dd5d040142714a84bb1ed733f9d8b804
     internalID: 0
     vertices: []
     indices: 

@@ -55,11 +55,11 @@ TagManager:
   - name: New Layer 4
     uniqueID: 3457873729
     locked: 0
-  - name: Player
-    uniqueID: 778108739
-    locked: 0
   - name: New Layer 5
     uniqueID: 585597245
+    locked: 0
+  - name: Player
+    uniqueID: 778108739
     locked: 0
   - name: New Layer 6
     uniqueID: 3657190817

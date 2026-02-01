@@ -6,9 +6,12 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 10;
     private int currentHealth;
 
+    public Animator enemyanimator;
+
     void Start()
     {
         currentHealth = maxHealth;
+        
     }
 
     public void Takedamage(int damageTaken, int damageMultiplier)
@@ -29,6 +32,7 @@ public class EnemyHealth : MonoBehaviour
     {
         // Add death effects, sounds, or loot drops here
         Debug.Log($"{gameObject.name} has been defeated!");
-        Destroy(gameObject); 
+        enemyanimator.SetTrigger("Death");
+        Destroy(gameObject,1f); 
     }
 }

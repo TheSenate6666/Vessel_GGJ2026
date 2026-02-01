@@ -120,7 +120,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 483
         width: 1200
         height: 483
       alignment: 0
@@ -141,7 +141,7 @@ TextureImporter:
       name: death_jump_1
       rect:
         serializedVersion: 2
-        x: 1200
+        x: 0
         y: 0
         width: 1200
         height: 483
@@ -163,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b4c92ad8cb8ed354e97d2bb2d8307259
+    spriteID: 21d34ece615bafd408ef61a44bf080fb
     internalID: 0
     vertices: []
     indices: 

@@ -141,7 +141,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 1932
         width: 1200
         height: 483
       alignment: 0
@@ -162,8 +162,8 @@ TextureImporter:
       name: death_attack2-0_1
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 0
+        x: 0
+        y: 1449
         width: 1200
         height: 483
       alignment: 0
@@ -184,8 +184,8 @@ TextureImporter:
       name: death_attack2-0_2
       rect:
         serializedVersion: 2
-        x: 2400
-        y: 0
+        x: 0
+        y: 966
         width: 1200
         height: 483
       alignment: 0
@@ -206,8 +206,8 @@ TextureImporter:
       name: death_attack2-0_3
       rect:
         serializedVersion: 2
-        x: 3600
-        y: 0
+        x: 0
+        y: 483
         width: 1200
         height: 483
       alignment: 0
@@ -228,7 +228,7 @@ TextureImporter:
       name: death_attack2-0_4
       rect:
         serializedVersion: 2
-        x: 4800
+        x: 0
         y: 0
         width: 1200
         height: 483
@@ -250,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 152a5501965d49942a139ebcaf01d4d7
+    spriteID: d022a80d510705d42be704c323d0ff1b
     internalID: 0
     vertices: []
     indices: 

@@ -81,6 +81,7 @@ public class MeleeBaseState : State
 
     protected void Attack()
     {
+        Debug.Log("attacking left click");
         // ... (Your existing Attack logic remains unchanged) ...
         Collider2D[] collidersToDamage = new Collider2D[10];
         ContactFilter2D filter = new ContactFilter2D();

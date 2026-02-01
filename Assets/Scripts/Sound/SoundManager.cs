@@ -37,6 +37,8 @@ public class SoundManager : MonoBehaviour
         }
 
         InitializeLibrary();
+        
+        PlayMusic("Music");
     }
 
     private void InitializeLibrary()

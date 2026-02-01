@@ -26,6 +26,9 @@ TextureImporter:
   - first:
       213: -2308923662416825891
     second: death_run_7
+  - first:
+      213: 985010823108520084
+    second: death_run_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -138,7 +141,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 3381
         width: 1200
         height: 483
       alignment: 0
@@ -159,8 +162,8 @@ TextureImporter:
       name: death_run_1
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 0
+        x: 0
+        y: 2898
         width: 1200
         height: 483
       alignment: 0
@@ -181,8 +184,8 @@ TextureImporter:
       name: death_run_2
       rect:
         serializedVersion: 2
-        x: 2400
-        y: 0
+        x: 0
+        y: 2415
         width: 1200
         height: 483
       alignment: 0
@@ -203,8 +206,8 @@ TextureImporter:
       name: death_run_3
       rect:
         serializedVersion: 2
-        x: 3600
-        y: 0
+        x: 0
+        y: 1932
         width: 1200
         height: 483
       alignment: 0
@@ -225,8 +228,8 @@ TextureImporter:
       name: death_run_4
       rect:
         serializedVersion: 2
-        x: 4800
-        y: 0
+        x: 0
+        y: 1449
         width: 1200
         height: 483
       alignment: 0
@@ -247,8 +250,8 @@ TextureImporter:
       name: death_run_5
       rect:
         serializedVersion: 2
-        x: 6000
-        y: 0
+        x: 0
+        y: 966
         width: 1200
         height: 483
       alignment: 0
@@ -269,8 +272,8 @@ TextureImporter:
       name: death_run_6
       rect:
         serializedVersion: 2
-        x: 7200
-        y: 0
+        x: 0
+        y: 483
         width: 1200
         height: 483
       alignment: 0
@@ -291,7 +294,7 @@ TextureImporter:
       name: death_run_7
       rect:
         serializedVersion: 2
-        x: 8400
+        x: 0
         y: 0
         width: 1200
         height: 483
@@ -313,7 +316,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 911853090e4dcd54ab7a0c9ffda3d527
+    spriteID: 61eff48dc25a720498830e14a4770069
     internalID: 0
     vertices: []
     indices: 

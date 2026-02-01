@@ -79,8 +79,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 778108739
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300142, guid: ae297123f091bbf4e8f1835eb98fb293, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
@@ -205,6 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  playerBody: {fileID: 0}
   isFlipped: 1
   attackDamage: 1
   enragedAttackDamage: 2
@@ -213,6 +214,7 @@ MonoBehaviour:
   attackMask:
     serializedVersion: 2
     m_Bits: 8
+  attackCooldown: 1.5
 --- !u!95 &3022370317069635987
 Animator:
   serializedVersion: 7

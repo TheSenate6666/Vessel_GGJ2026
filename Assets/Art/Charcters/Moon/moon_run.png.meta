@@ -125,10 +125,10 @@ TextureImporter:
       name: moon_run_0
       rect:
         serializedVersion: 2
-        x: 14
+        x: 0
         y: 0
-        width: 125
-        height: 145
+        width: 216
+        height: 216
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: moon_run_1
       rect:
         serializedVersion: 2
-        x: 233
+        x: 216
         y: 0
-        width: 125
-        height: 151
+        width: 216
+        height: 216
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,10 +169,10 @@ TextureImporter:
       name: moon_run_2
       rect:
         serializedVersion: 2
-        x: 446
+        x: 432
         y: 0
-        width: 125
-        height: 145
+        width: 216
+        height: 216
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,10 +191,10 @@ TextureImporter:
       name: moon_run_3
       rect:
         serializedVersion: 2
-        x: 665
+        x: 648
         y: 0
-        width: 125
-        height: 151
+        width: 216
+        height: 216
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b9a8b7bb72cf10c4683697969aec3846
     internalID: 0
     vertices: []
     indices: 

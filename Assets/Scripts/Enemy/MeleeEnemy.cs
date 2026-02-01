@@ -17,6 +17,8 @@ public class MeleeEnemy : MonoBehaviour
 	public float attackCooldown = 1.5f; // Seconds between hits
 	private float nextAttackTime = 0f;
 
+	
+
     public void LookAtPlayer()
     {
         Vector3 targetPos = GetTargetPosition();
