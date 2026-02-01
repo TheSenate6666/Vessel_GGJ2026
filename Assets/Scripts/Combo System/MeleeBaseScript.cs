@@ -22,7 +22,14 @@ public class MeleeBaseState : State
     public override void OnEnter(StateMachine _stateMachine)
     {
         base.OnEnter(_stateMachine);
-        animator = GetComponent<Animator>();
+        if (PlayerController.instance != null)
+        {
+            animator = PlayerController.instance.currentAnimator;
+        }
+        else
+        {
+            Debug.LogError("PlayerController Instance not found!");
+        }
         collidersDamaged = new List<Collider2D>();
         
         // Ensure references are valid to prevent errors

@@ -34,17 +34,22 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public GameObject Hiteffect;
 
 
-    [Header("Form Settings")]
+    [Header("Form Visuals Setup")]
+    // 1. Reference to the ROOT components (Fire God)
+    [SerializeField] private SpriteRenderer rootSpriteRenderer; 
+    [SerializeField] private Animator rootAnimator;
+
+    // 2. Reference to the CHILD GameObjects
+    [SerializeField] private GameObject moonVisualsObj;
+    [SerializeField] private GameObject deathVisualsObj;
+    
+    // 3. We assume these children have Animators on them. We cache them in Awake.
+    private Animator moonAnim;
+    private Animator deathAnim;
+
+    // The "Public" Accessor that your State Machine will read
+    public Animator currentAnimator { get; private set; }
     public PlayerForm currentForm;
-    [SerializeField] private RuntimeAnimatorController moonController;
-    [SerializeField] private RuntimeAnimatorController fireController;
-    [SerializeField] private RuntimeAnimatorController deathController;
-
-    // Optional: If the forms have different sprites/meshes
-    [SerializeField] private GameObject moonVisuals;
-    [SerializeField] private GameObject fireVisuals;
-    [SerializeField] private GameObject deathVisuals;
-
     public void OnSwitchToMoon(InputAction.CallbackContext context) { if(context.performed) SetForm(PlayerForm.Moon); }
     public void OnSwitchToFire(InputAction.CallbackContext context) { if(context.performed) SetForm(PlayerForm.Fire); }
     public void OnSwitchToDeath(InputAction.CallbackContext context) { if(context.performed) SetForm(PlayerForm.Death); }
@@ -54,6 +59,13 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         instance= this;
+
+        // Cache the Child Animators
+        if(moonVisualsObj != null) moonAnim = moonVisualsObj.GetComponent<Animator>();
+        if(deathVisualsObj != null) deathAnim = deathVisualsObj.GetComponent<Animator>();
+
+        // Start as Fire (Root)
+        SetForm(PlayerForm.Fire);
     }
 
     public void Start()
@@ -71,39 +83,52 @@ public class PlayerController : MonoBehaviour
     {
         currentForm = newForm;
 
-        // 1. Swap the Animator Controller
+        // Reset everything first
+        // 1. Hide the ROOT (Fire) visuals
+        rootSpriteRenderer.enabled = false;
+        
+        // 2. Hide the CHILD visuals
+        if(moonVisualsObj) moonVisualsObj.SetActive(false);
+        if(deathVisualsObj) deathVisualsObj.SetActive(false);
+
+        // 3. Activate the specific form
         switch (newForm)
         {
-            case PlayerForm.Moon:
-                anim.runtimeAnimatorController = moonController;
-                break;
             case PlayerForm.Fire:
-                anim.runtimeAnimatorController = fireController;
+                // Fire is on the ROOT
+                rootSpriteRenderer.enabled = true;
+                rootAnimator.enabled = true;
+                currentAnimator = rootAnimator;
                 break;
+
+            case PlayerForm.Moon:
+                // Moon is a CHILD
+                moonVisualsObj.SetActive(true);
+                currentAnimator = moonAnim;
+                // Optional: Disable root animator to save performance
+                rootAnimator.enabled = false; 
+                break;
+
             case PlayerForm.Death:
-                anim.runtimeAnimatorController = deathController;
+                // Death is a CHILD
+                deathVisualsObj.SetActive(true);
+                currentAnimator = deathAnim;
+                rootAnimator.enabled = false;
                 break;
         }
 
-        // 2. Swap Visuals (if they are different objects/meshes)
-        moonVisuals.SetActive(newForm == PlayerForm.Moon);
-        fireVisuals.SetActive(newForm == PlayerForm.Fire);
-        deathVisuals.SetActive(newForm == PlayerForm.Death);
-        
-        Debug.Log("Switched to " + newForm + " Form");
+        Debug.Log("Switched to " + newForm);
     }
 
 
     private void UpdateAnimations()
     {
-        // 1. Pass the absolute horizontal movement (0 to 1) for Idle/Run transition
-        anim.SetFloat("horizontalSpeed", Mathf.Abs(horizontol));
+        if (currentAnimator == null) return;
 
-        // 2. Pass the grounded status
-        anim.SetBool("isGrounded", IsGrounded());
-
-        // 3. Pass vertical velocity to distinguish between jumping and falling
-        anim.SetFloat("verticalVelocity", rb.linearVelocity.y);
+        // Send parameters to the ACTIVE animator (whichever one it is)
+        currentAnimator.SetFloat("horizontalSpeed", Mathf.Abs(horizontol));
+        currentAnimator.SetBool("isGrounded", IsGrounded());
+        currentAnimator.SetFloat("verticalVelocity", rb.linearVelocity.y);
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -172,19 +197,17 @@ public class PlayerController : MonoBehaviour
 
     private void FlipSprite()
     {
-        // Safety check: ensure you've assigned the child in the inspector
-        if (playerLookTransform == null) return;
+         // Instead of flipping the root, we check which form is active
+         Transform targetTransform = transform; // Default to root
 
-        // Flips ONLY the visual child object based on movement direction
-        if (horizontol > 0)
-        {
-            playerLookTransform.localScale = new Vector3(1, 1, 1);
-        }
-        else if (horizontol < 0)
-        {
-            playerLookTransform.localScale = new Vector3(-1, 1, 1);
-        }
+         if (currentForm == PlayerForm.Moon) targetTransform = moonVisualsObj.transform;
+         else if (currentForm == PlayerForm.Death) targetTransform = deathVisualsObj.transform;
+         else targetTransform = transform; // Fire is root
 
+         if (horizontol > 0)
+            targetTransform.localScale = new Vector3(1, 1, 1);
+         else if (horizontol < 0)
+            targetTransform.localScale = new Vector3(-1, 1, 1);
     }
 
     

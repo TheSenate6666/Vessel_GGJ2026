@@ -1,52 +1,33 @@
-using System;
 using UnityEngine;
-using UnityEngine.Events;
-
 
 public class SoundEmitter : MonoBehaviour
 {
-    [SerializeField]AudioClip soundClip;
+    [Header("Settings")]
+    [Tooltip("The name must match an entry in SoundManager's Library")]
+    [SerializeField] private string soundName; 
     
-
-    
-    public float baseVol = 0.8f;
-
-    private void Start()
-    {
-       
-    }
+    [Range(0f, 1f)]
+    public float volumeMultiplier = 1f;
 
     public void PlaySound()
     {
-        if (SoundManager.instance == null) { return; }
-        if (soundClip == null) { return ; }
-        
-        SoundManager.instance.PlayAudio(soundClip,1, baseVol);
+        if (SoundManager.instance != null)
+        {
+            SoundManager.instance.PlaySFX(soundName, volumeMultiplier);
+        }
     }
-    public void PlaySound(float volume)
+    
+    public void PlayAsMusic()
     {
-
-        if (SoundManager.instance == null) { return; }
-        if (soundClip == null) { return; }
-
-        SoundManager.instance.PlayAudio(soundClip,1,volume);
-    }
-    public void PlaySound(float volume, float pitch)
-    {
-       
-
-        
-        SoundManager.instance.PlayAudio(soundClip, pitch, volume);
+        if (SoundManager.instance != null)
+        {
+            SoundManager.instance.PlayMusic(soundName);
+        }
     }
 
-
-    public void SetAudioClip(AudioClip newClip)
+    // Allows changing the target sound dynamically
+    public void SetSoundName(string newName)
     {
-        soundClip = newClip;
-    }
-
-    public AudioClip GetAudioClip()
-    {
-        return soundClip;
+        soundName = newName;
     }
 }
