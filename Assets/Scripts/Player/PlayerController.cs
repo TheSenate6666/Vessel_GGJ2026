@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 using System.Collections;
 using System.Collections.Generic;
 
-
+public enum PlayerForm { Moon, Fire, Death }
 public class PlayerController : MonoBehaviour
 {
     [Header("Player References")]
@@ -34,6 +34,22 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public GameObject Hiteffect;
 
 
+    [Header("Form Settings")]
+    public PlayerForm currentForm;
+    [SerializeField] private RuntimeAnimatorController moonController;
+    [SerializeField] private RuntimeAnimatorController fireController;
+    [SerializeField] private RuntimeAnimatorController deathController;
+
+    // Optional: If the forms have different sprites/meshes
+    [SerializeField] private GameObject moonVisuals;
+    [SerializeField] private GameObject fireVisuals;
+    [SerializeField] private GameObject deathVisuals;
+
+    public void OnSwitchToMoon(InputAction.CallbackContext context) { if(context.performed) SetForm(PlayerForm.Moon); }
+    public void OnSwitchToFire(InputAction.CallbackContext context) { if(context.performed) SetForm(PlayerForm.Fire); }
+    public void OnSwitchToDeath(InputAction.CallbackContext context) { if(context.performed) SetForm(PlayerForm.Death); }
+
+
 
     private void Awake()
     {
@@ -49,6 +65,32 @@ public class PlayerController : MonoBehaviour
     {
         UpdateAnimations();
         FlipSprite();
+    }
+
+    private void SetForm(PlayerForm newForm)
+    {
+        currentForm = newForm;
+
+        // 1. Swap the Animator Controller
+        switch (newForm)
+        {
+            case PlayerForm.Moon:
+                anim.runtimeAnimatorController = moonController;
+                break;
+            case PlayerForm.Fire:
+                anim.runtimeAnimatorController = fireController;
+                break;
+            case PlayerForm.Death:
+                anim.runtimeAnimatorController = deathController;
+                break;
+        }
+
+        // 2. Swap Visuals (if they are different objects/meshes)
+        moonVisuals.SetActive(newForm == PlayerForm.Moon);
+        fireVisuals.SetActive(newForm == PlayerForm.Fire);
+        deathVisuals.SetActive(newForm == PlayerForm.Death);
+        
+        Debug.Log("Switched to " + newForm + " Form");
     }
 
 
@@ -144,4 +186,6 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+    
 }

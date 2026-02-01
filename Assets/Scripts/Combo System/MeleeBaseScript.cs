@@ -52,9 +52,13 @@ public class MeleeBaseState : State
             shouldCombo = true;
             Debug.Log("Combo Window Success! shouldCombo is now true.");
             // Optional: Consume the timer so it doesn't trigger twice
-            AttackPressedTimer = 0; 
+            AttackPressedTimer = 0;
+            OnComboTriggered(); 
         }
-
+        if (IsAnimationFinished() && !shouldCombo)
+        {
+            stateMachine.SetNextStateToMain();
+        }
         // CHECK 2: Perform the Hit Detection
         if (animator.GetFloat("Weapon.Active") > 0f)
         {
@@ -100,4 +104,6 @@ public class MeleeBaseState : State
             }
         }
     }
+
+    protected virtual void OnComboTriggered() { }
 }

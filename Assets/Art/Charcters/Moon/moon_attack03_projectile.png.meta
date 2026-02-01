@@ -1,0 +1,442 @@
+fileFormatVersion: 2
+guid: e3c259c70b3f5904ca79192b210799ca
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4706969123829370593
+    second: moon_attack03_projectile_0
+  - first:
+      213: -378020423477123530
+    second: moon_attack03_projectile_1
+  - first:
+      213: 1416282412207243057
+    second: moon_attack03_projectile_2
+  - first:
+      213: 874723431535260549
+    second: moon_attack03_projectile_3
+  - first:
+      213: -9121038657292048634
+    second: moon_attack03_projectile_4
+  - first:
+      213: -3901048586537756238
+    second: moon_attack03_projectile_5
+  - first:
+      213: 5532880847419608825
+    second: moon_attack03_projectile_6
+  - first:
+      213: -2581017469202820021
+    second: moon_attack03_projectile_7
+  - first:
+      213: -8335054873070635773
+    second: moon_attack03_projectile_8
+  - first:
+      213: 5497994009913912017
+    second: moon_attack03_projectile_9
+  - first:
+      213: 775570995008860661
+    second: moon_attack03_projectile_10
+  - first:
+      213: -7662162782198815976
+    second: moon_attack03_projectile_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Switch
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: moon_attack03_projectile_0
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 83
+        width: 113
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f113b6d358c7daeb0800000000000000
+      internalID: -4706969123829370593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moon_attack03_projectile_1
+      rect:
+        serializedVersion: 2
+        x: 1727
+        y: 83
+        width: 113
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 636adcc7d6001caf0800000000000000
+      internalID: -378020423477123530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moon_attack03_projectile_2
+      rect:
+        serializedVersion: 2
+        x: 3371
+        y: 80
+        width: 113
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13ffe31a955a7a310800000000000000
+      internalID: 1416282412207243057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moon_attack03_projectile_3
+      rect:
+        serializedVersion: 2
+        x: 5024
+        y: 80
+        width: 113
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 583be559354a32c00800000000000000
+      internalID: 874723431535260549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moon_attack03_projectile_4
+      rect:
+        serializedVersion: 2
+        x: 6677
+        y: 2
+        width: 194
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6076081aaaf8b6180800000000000000
+      internalID: -9121038657292048634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moon_attack03_projectile_5
+      rect:
+        serializedVersion: 2
+        x: 8330
+        y: 29
+        width: 161
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b990ebaaf0bcd9c0800000000000000
+      internalID: -3901048586537756238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moon_attack03_projectile_6
+      rect:
+        serializedVersion: 2
+        x: 9983
+        y: 59
+        width: 137
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fe0207f0ddb8cc40800000000000000
+      internalID: 5532880847419608825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moon_attack03_projectile_7
+      rect:
+        serializedVersion: 2
+        x: 11636
+        y: 77
+        width: 125
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b44961d59426e2cd0800000000000000
+      internalID: -2581017469202820021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moon_attack03_projectile_8
+      rect:
+        serializedVersion: 2
+        x: 13289
+        y: 80
+        width: 122
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3057c3301cfe35c80800000000000000
+      internalID: -8335054873070635773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moon_attack03_projectile_9
+      rect:
+        serializedVersion: 2
+        x: 15032
+        y: 77
+        width: 1487
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dae4222c6ccc4c40800000000000000
+      internalID: 5497994009913912017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moon_attack03_projectile_10
+      rect:
+        serializedVersion: 2
+        x: 16676
+        y: 77
+        width: 1502
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f17997f5b163ca00800000000000000
+      internalID: 775570995008860661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moon_attack03_projectile_11
+      rect:
+        serializedVersion: 2
+        x: 18332
+        y: 77
+        width: 1490
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81322d3ab878aa590800000000000000
+      internalID: -7662162782198815976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      moon_attack03_projectile_0: -4706969123829370593
+      moon_attack03_projectile_1: -378020423477123530
+      moon_attack03_projectile_10: 775570995008860661
+      moon_attack03_projectile_11: -7662162782198815976
+      moon_attack03_projectile_2: 1416282412207243057
+      moon_attack03_projectile_3: 874723431535260549
+      moon_attack03_projectile_4: -9121038657292048634
+      moon_attack03_projectile_5: -3901048586537756238
+      moon_attack03_projectile_6: 5532880847419608825
+      moon_attack03_projectile_7: -2581017469202820021
+      moon_attack03_projectile_8: -8335054873070635773
+      moon_attack03_projectile_9: 5497994009913912017
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
