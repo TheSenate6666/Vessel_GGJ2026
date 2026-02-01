@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 using System.Collections.Generic;
-
+using UnityEngine.SceneManagement;
 public enum PlayerForm { Moon, Fire, Death }
 public class PlayerController : MonoBehaviour
 {
@@ -210,5 +210,13 @@ public class PlayerController : MonoBehaviour
             targetTransform.localScale = new Vector3(-1, 1, 1);
     }
 
+    public void ReloadScene(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            // Gets the name of the currently active scene and reloads it
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
     
 }

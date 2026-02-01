@@ -113,6 +113,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Reloadscene",
+                    "type": "Button",
+                    "id": "c2fe3b40-0199-45ed-8711-42e47edfb086",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -564,6 +573,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "SwitchtoDeath",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d1e3ea61-2f79-4ff9-b662-01b4cab3dd17",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reloadscene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4d34dd31-019f-43a1-bad0-bd26d91a66b4",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reloadscene",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
